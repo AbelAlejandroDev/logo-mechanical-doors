@@ -31,13 +31,15 @@ html {
     height: 100%;
 }
 
+/* Logo */
 #logo {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1); /* Ajusta según sea necesario */
     z-index: 5;
-    transition: transform 1s ease;
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease; /* Transiciones para transformación y opacidad */
 }
 
 #logo img {
@@ -45,9 +47,14 @@ html {
     height: 100px;
     display: block;
     cursor: pointer;
-
 }
 
+.open #logo {
+    transform: translate(-50%, -50%) scale(0.5) translateY(-500px);
+    opacity: 0;
+}
+
+/* Puertas */
 .door {
     position: absolute;
     height: 100%;
@@ -90,11 +97,7 @@ html {
     transform: translateX(100%);
 }
 
-.open #logo {
-    transform: translate(-50%, -50%) scale(0.5) translateY(-500px);
-    /* Ajusta según sea necesario */
-}
-
+/* Loading */
 #loading {
     background-color: white;
     z-index: 9999;
@@ -129,7 +132,6 @@ html {
     }
 }
 
-
 .hidden {
     display: none;
-  }
+}

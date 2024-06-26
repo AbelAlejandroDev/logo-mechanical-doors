@@ -23,6 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             logoContainer.classList.add('open'); // Agregar clase para abrir las puertas
         }, 50); // Retraso mínimo para asegurar que la transición se active inmediatamente
+
+        // Ocultar puertas y logo después de la animación
+        setTimeout(() => {
+            overlay.style.display = 'none'; // Ocultar el overlay después de la animación
+        }, 2000); // Ajusta el tiempo según la duración de tu animación
     }
 
     // Evento que se dispara cuando todas las imágenes están cargadas
