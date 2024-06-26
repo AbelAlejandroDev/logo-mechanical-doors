@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -6,7 +7,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff; /* Cambia a tu color de fondo deseado */
+    background-color: #fff;
+    /* Cambia a tu color de fondo deseado */
 }
 
 #overlay {
@@ -15,7 +17,8 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* Cambia a tu color de fondo deseado */
+    background-color: #000;
+    /* Cambia a tu color de fondo deseado */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +45,7 @@ body, html {
     height: 100px;
     display: block;
     cursor: pointer;
-    
+
 }
 
 .door {
@@ -57,8 +60,10 @@ body, html {
     left: 0;
     width: 50%;
     transform-origin: left;
-    background-color: #333; /* Color de fondo en caso de que la imagen no cargue */
-    background-image: url('./imagenes/puerta-1.png'); /* Asegúrate de que esta ruta es correcta */
+    background-color: #333;
+    /* Color de fondo en caso de que la imagen no cargue */
+    background-image: url('./imagenes/puerta-1.png');
+    /* Asegúrate de que esta ruta es correcta */
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
@@ -68,8 +73,10 @@ body, html {
     right: 0;
     width: 50%;
     transform-origin: right;
-    background-color: #333; /* Color de fondo en caso de que la imagen no cargue */
-    background-image: url('./imagenes/puerta-2.png'); /* Asegúrate de que esta ruta es correcta */
+    background-color: #333;
+    /* Color de fondo en caso de que la imagen no cargue */
+    background-image: url('./imagenes/puerta-2.png');
+    /* Asegúrate de que esta ruta es correcta */
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
@@ -84,5 +91,36 @@ body, html {
 }
 
 .open #logo {
-    transform: translate(-50%, -50%) scale(0.5) translateY(-500px); /* Ajusta según sea necesario */
+    transform: translate(-50%, -50%) scale(0.5) translateY(-500px);
+    /* Ajusta según sea necesario */
 }
+
+#loading {
+    text-align: center;
+    z-index: 9999;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.hidden {
+    display: none;
+  }
