@@ -1,0 +1,88 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* Cambia a tu color de fondo deseado */
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* Cambia a tu color de fondo deseado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#logo-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    transition: transform 1s ease;
+}
+
+#logo img {
+    width: 140px;
+    height: 100px;
+    display: block;
+    cursor: pointer;
+    
+}
+
+.door {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    transition: transform 1s ease;
+}
+
+.left-door {
+    left: 0;
+    width: 50%;
+    transform-origin: left;
+    background-color: #333; /* Color de fondo en caso de que la imagen no cargue */
+    background-image: url('./imagenes/puerta-1.png'); /* Asegúrate de que esta ruta es correcta */
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.right-door {
+    right: 0;
+    width: 50%;
+    transform-origin: right;
+    background-color: #333; /* Color de fondo en caso de que la imagen no cargue */
+    background-image: url('./imagenes/puerta-2.png'); /* Asegúrate de que esta ruta es correcta */
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.open .left-door {
+    transform: translateX(-100%);
+}
+
+.open .right-door {
+    transform: translateX(100%);
+}
+
+.open #logo {
+    transform: translate(-50%, -50%) scale(0.5) translateY(-500px); /* Ajusta según sea necesario */
+}
