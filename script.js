@@ -4,49 +4,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const loading = document.getElementById('loading');
 
     // Mostrar loading inicialmente
-    loading.style.display = 'flex'; // Cambiado a 'flex' para centrar el contenido
+    loading.style.display = 'flex'; // Mostrar el loading al inicio
 
-    // Función para ocultar el loading y mostrar el contenido
-    function mostrarContenido() {
-        loading.style.display = 'none';
-        overlay.style.display = 'block'; // Mostrar el overlay con el logo
+    // Función para ocultar el loading con efecto de desvanecimiento
+    function ocultarLoading() {
+        loading.style.opacity = '0';
+        setTimeout(() => {
+            loading.style.display = 'none';
+        }, 500); // Desvanecimiento del loading después de 0.5 segundos
     }
 
-    // Cuando se hace clic en el logo, abrir las puertas
-    logoContainer.addEventListener('click', function() {
-        // Ejemplo de animación de puerta en el logoContainer
-        logoContainer.classList.add('open');
+    // Función para abrir las puertas al hacer clic en el logo
+    function abrirPuertas() {
+        // Mostrar overlay con las puertas y el logo
+        overlay.style.display = 'block';
 
-        // Ocultar el overlay después de la animación
+        // Ejemplo de animación de puertas en el logoContainer
         setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 1000); // Duración de la animación (1s)
-    });
+            logoContainer.classList.add('open'); // Agregar clase para abrir las puertas
+        }, 50); // Retraso mínimo para asegurar que la transición se active inmediatamente
+    }
 
     // Evento que se dispara cuando todas las imágenes están cargadas
-    function imagenesCargadas() {
-        const imagenes = document.querySelectorAll("#logo img");
-        const totalImagenes = imagenes.length;
-        let imagenesCargadas = 0;
+    window.addEventListener('load', function() {
+        // Simulación de carga de contenido (reemplaza con tu lógica real)
+        setTimeout(() => {
+            ocultarLoading(); // Ocultar el loading después de un breve retraso
+        }, 2000); // Simula una carga mínima de 2 segundos
+    });
 
-        // Verificar si todas las imágenes están cargadas
-        function verificarCarga() {
-            imagenesCargadas++;
-            if (imagenesCargadas === totalImagenes) {
-                mostrarContenido();
-            }
-        }
-
-        // Agregar evento de carga a cada imagen
-        imagenes.forEach(function(img) {
-            if (img.complete) {
-                verificarCarga();
-            } else {
-                img.addEventListener("load", verificarCarga);
-            }
-        });
-    }
-
-    // Llamar a la función cuando todas las imágenes estén cargadas
-    imagenesCargadas();
+    // Evento clic en el logo para abrir las puertas
+    logoContainer.addEventListener('click', function() {
+        abrirPuertas(); // Abrir las puertas al hacer clic en el logo
+    });
 });
