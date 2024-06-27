@@ -8,7 +8,6 @@ html {
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    /* Cambia a tu color de fondo deseado */
 }
 
 #overlay {
@@ -18,7 +17,6 @@ html {
     width: 100%;
     height: 100%;
     background-color: #000;
-    /* Cambia a tu color de fondo deseado */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,10 +34,10 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1); /* Ajusta según sea necesario */
+    transform: translate(-50%, -50%) scale(1);
     z-index: 5;
     opacity: 1;
-    transition: transform 1s ease, opacity 1s ease; /* Transiciones para transformación y opacidad */
+    transition: transform 1.5s ease, opacity 1s ease; /* Transiciones para transformación y opacidad */
 }
 
 #logo img {
@@ -47,11 +45,22 @@ html {
     height: 100px;
     display: block;
     cursor: pointer;
+    transition: transform 0.5s ease; /* Transición más lenta para el efecto de presionado */
+}
+
+#logo img:active {
+    transform: scale(0.75); /* Simula el efecto de presionar */
+}
+
+.rotate {
+    transform: rotate(-90deg); /* Rotar a la derecha */
+    transition: transform 1s ease; /* Transición para la rotación */
 }
 
 .open #logo {
-    transform: translate(-50%, -50%) scale(0.5) translateY(-500px);
+    transform: translateX(100%) translateY(-50%) scale(0.5); /* Mover el logo hacia la derecha */
     opacity: 0;
+    transition: transform 1s ease, opacity 1s ease; /* Transiciones para transformación y opacidad */
 }
 
 /* Puertas */
