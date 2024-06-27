@@ -37,7 +37,7 @@ html {
     transform: translate(-50%, -50%) scale(1);
     z-index: 5;
     opacity: 1;
-    transition: transform 1.5s ease, opacity 1s ease; /* Transiciones para transformación y opacidad */
+    transition: transform 2s ease; /* Transición solo para transformación */
 }
 
 #logo img {
@@ -45,11 +45,11 @@ html {
     height: 100px;
     display: block;
     cursor: pointer;
-    transition: transform 0.5s ease; /* Transición más lenta para el efecto de presionado */
+    transition: transform 1s ease; /* Transición más lenta para el efecto de presionado */
 }
 
 #logo img:active {
-    transform: scale(0.75); /* Simula el efecto de presionar */
+    transform: scale(0.2); /* Simula el efecto de presionar */
 }
 
 .rotate {
@@ -58,9 +58,7 @@ html {
 }
 
 .open #logo {
-    transform: translateX(100%) translateY(-50%) scale(0.5); /* Mover el logo hacia la derecha */
-    opacity: 0;
-    transition: transform 1s ease, opacity 1s ease; /* Transiciones para transformación y opacidad */
+    transform: translateX(calc(50% + 50vw)) translateY(-50%); /* Mover el logo hacia la derecha */
 }
 
 /* Puertas */
@@ -69,7 +67,7 @@ html {
     height: 100%;
     top: 0;
     z-index: 2;
-    transition: transform 1s ease;
+    transition: transform 1s ease; /* Ajustar la duración de la transición de las puertas */
 }
 
 .left-door {
